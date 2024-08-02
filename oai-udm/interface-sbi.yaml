@@ -4,9 +4,10 @@ metadata: # kpt-merge: /sbi
   name: sbi
   annotations:
     config.kubernetes.io/local-config: "true"
-    specializer.nephio.org/owner: workload.nephio.org/v1alpha1.NFDeployment.udm-core
+    specializer.nephio.org/owner: workload.nephio.org/v1alpha1.NFDeployment.udm-rke-core
     specializer.nephio.org/namespace: oai-core
     internal.kpt.dev/upstream-identifier: 'req.nephio.org|Interface|default|sbi'
 spec:
   networkInstance:
     name: default
+status: {}
