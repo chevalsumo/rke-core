@@ -19,6 +19,8 @@ upstreamLock:
     ref: main
     commit: f4e693b33195198240c93a4bbdf1cc7e8631a95a
 info:
+  readinessGates:
+  - conditionType: config.injection.WorkloadCluster.workload-cluster
   description: udm blueprint package
 pipeline:
   mutators:
@@ -31,6 +33,10 @@ pipeline:
   - image: docker.io/nephio/interface-fn:latest
 status:
   conditions:
-  - message: 'spec invalid: mandatory field CNIConfig is missing from ClusterContext'
+  - type: config.injection.WorkloadCluster.workload-cluster
+    status: "True"
+    message: injected resource "rke-core" from cluster
+    reason: ConfigInjected
+  - type: req.nephio.org/v1alpha1.Interface.sbi
     status: "False"
-    type: req.nephio.org/v1alpha1.Interface.sbi
+    message: 'spec invalid: mandatory field CNIConfig is missing from ClusterContext'
