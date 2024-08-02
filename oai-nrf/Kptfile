@@ -27,3 +27,8 @@ pipeline:
   - image: gcr.io/kpt-fn/set-namespace:v0.4.1
     configPath: cm-namespace.yaml
   - image: docker.io/nephio/interface-fn:latest
+status:
+  conditions:
+  - message: 'spec invalid: mandatory field CNIConfig is missing from ClusterContext'
+    status: "False"
+    type: req.nephio.org/v1alpha1.Interface.sbi
