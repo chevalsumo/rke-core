@@ -36,5 +36,5 @@ status:
     message: injected resource "rke-core" from cluster
     reason: ConfigInjected
   - type: req.nephio.org/v1alpha1.Interface.sbi
-    status: "False"
-    message: 'spec invalid: mandatory field CNIConfig is missing from ClusterContext'
+    status: "True"
+    message: update done
